@@ -66,6 +66,9 @@ const Header = () => {
   const navigationHandler = (type) => {
     if (type === "movies") {
       navigate("/explore/movies");
+    }
+    if (type === "img") {
+      navigate("/");
     } else {
       navigate("/explore/tv");
     }
@@ -76,7 +79,7 @@ const Header = () => {
     <header className={`header ${mobileMenu ? "mobileView" : ""}  ${show}`}>
       <ContentWrapper>
         <div className="logo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" onClick={() => navigationHandler("img")} />
         </div>
         <ul className="menuItems">
           <li className="menuItem" onClick={() => navigationHandler("movies")}>
