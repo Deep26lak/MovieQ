@@ -8,7 +8,6 @@ import { Img, ContentWrapper } from "../../../components";
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
-  console.log(background);
 
   // use navigate funciton for showing search query in link
   const navigate = useNavigate();
