@@ -15,7 +15,7 @@ import Genres from "../genres/Genres";
 
 import "./carousel.scss";
 
-const Carousel = ({ data, loading }) => {
+const Carousel = ({ data, loading, endPoint }) => {
   const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
@@ -65,7 +65,13 @@ const Carousel = ({ data, loading }) => {
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
-                <div key={item.id} className="carouselItem">
+                <div
+                  key={item.id}
+                  className="carouselItem"
+                  onClick={() =>
+                    navigate(`/${item.media_type || endPoint}/${item.id}`)
+                  }
+                >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <Genres data={item.genre_ids.slice(0, 2)} />
