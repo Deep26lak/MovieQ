@@ -8,6 +8,7 @@ import { Img, ContentWrapper } from "../../../components";
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
+  console.log(background);
 
   // use navigate funciton for showing search query in link
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const HeroBanner = () => {
   useEffect(() => {
     const bg =
       url.backdrop +
-      data?.results?.[Math.floor(Math.random() * 19)]?.backdrop_path;
+      data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
     setBackground(bg);
   }, [data]);
 
