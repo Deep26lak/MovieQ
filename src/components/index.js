@@ -6,6 +6,7 @@ import SwitchTabs from "./switchTabs/SwitchTabs";
 import Carousel from "./carousel/Carousel";
 import CircleRating from "./circleRating/CircleRating";
 import Genres from "./genres/Genres";
+import VideoPopup from "./videoPopup/VideoPopup";
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   Carousel,
   CircleRating,
   Genres,
+  VideoPopup,
 };
