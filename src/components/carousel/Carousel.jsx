@@ -74,7 +74,7 @@ const Carousel = ({ data, loading, endPoint }) => {
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
-                    <Genres data={item.genre_ids.slice(0, 2)} />
+
                     <CircleRating rating={item.vote_average.toFixed(1)} />
                   </div>
                   <div className="textBlock">
