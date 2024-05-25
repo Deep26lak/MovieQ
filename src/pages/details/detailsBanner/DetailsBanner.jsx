@@ -43,16 +43,16 @@ const DetailsBanner = ({ video, crew }) => {
           {!!data && (
             <React.Fragment>
               <div className="backdrop-img">
-                <Img src={url.backdrop + data.backdrop_path}></Img>
+                <Img src={url.backdrop + data?.backdrop_path}></Img>
               </div>
               <div className="opacity-layer"></div>
               <ContentWrapper>
                 <div className="content">
                   <div className="left">
-                    {data.poster_path ? (
+                    {data?.poster_path ? (
                       <Img
                         className="posterImg"
-                        src={url.backdrop + data.poster_path}
+                        src={url.backdrop + data?.poster_path}
                       ></Img>
                     ) : (
                       <Img className="posterImg" src={PosterFallback}></Img>
@@ -65,15 +65,15 @@ const DetailsBanner = ({ video, crew }) => {
                     <div className="subtitle">{data?.tagline}</div>
                     <Genres data={_genres} />
 
-                    <div
-                      className="row"
-                      onClick={() => {
-                        setShow(true);
-                        setVideoId(video.key);
-                      }}
-                    >
-                      <CircleRating rating={data.vote_average.toFixed(1)} />
-                      <div className="playbtn">
+                    <div className="row">
+                      <CircleRating rating={data?.vote_average?.toFixed(1)} />
+                      <div
+                        className="playbtn"
+                        onClick={() => {
+                          setShow(true);
+                          setVideoId(video.key);
+                        }}
+                      >
                         <PlayIcon />
                         <span className="text">Watch Trailer</span>
                       </div>
@@ -84,7 +84,7 @@ const DetailsBanner = ({ video, crew }) => {
                       <div className="description">{data?.overview}</div>
                     </div>
                     <div className="info">
-                      {data.status && (
+                      {data?.status && (
                         <div className="infoItem">
                           <span className="text bold">Status: </span>
                           <span className="text">{data.status}</span>
@@ -98,7 +98,7 @@ const DetailsBanner = ({ video, crew }) => {
                           </span>
                         </div>
                       )}
-                      {data.runtime && (
+                      {data?.runtime && (
                         <div className="infoItem">
                           <span className="text bold">Runtime: </span>
                           <span className="text">

@@ -9,15 +9,6 @@ import "./header.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/movix-logo.svg";
 
-const searchQueryHandler = (e) => {
-  if (e.key === "Enter" && query.length > 0) {
-    navigate(`/search/${query}`);
-    setTimeout(() => {
-      setShowSearch(false);
-    }, 1000);
-  }
-};
-
 const Header = () => {
   const [show, setShow] = useState("top");
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -26,6 +17,15 @@ const Header = () => {
   const [showSearch, setShowSearch] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+
+  const searchQueryHandler = (e) => {
+    if (e.key === "Enter" && query.length > 0) {
+      navigate(`/search/${query}`);
+      setTimeout(() => {
+        setShowSearch(false);
+      }, 1000);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);

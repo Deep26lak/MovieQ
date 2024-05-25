@@ -31,7 +31,6 @@ const Carousel = ({ data, loading, endPoint, title }) => {
     container.scrollTo({
       left: scrollAmount,
       behavior: "smooth",
-      loop: true,
     });
   };
 
@@ -65,6 +64,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
+              console.log(item);
               return (
                 <div
                   key={item.id}
@@ -77,6 +77,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                     <Img src={posterUrl} />
 
                     <CircleRating rating={item.vote_average.toFixed(1)} />
+                    <Genres data={item.genre_ids.slice(0, 2)} />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
