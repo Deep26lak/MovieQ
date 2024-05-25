@@ -12,7 +12,7 @@ import {
 import useFetch from "../../../hooks/useFetch";
 import PosterFallback from "../../../assets/no-poster.png";
 import "./detailsBanner.scss";
-import { PlayIcon } from "./PlayBtn";
+import { PlayIcon } from "../PlayBtn";
 
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
