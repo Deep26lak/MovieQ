@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux";
 import { Img, ContentWrapper } from "../../../components";
+import fallbackBG from "../../../assets/fallbackBG.jpg";
 
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
@@ -31,7 +32,7 @@ const HeroBanner = () => {
     <div className="heroBanner">
       {!loading && (
         <div className="backdrop-img">
-          <Img src={background} />
+          <Img src={background ? background : fallbackBG} />
         </div>
       )}
       <div className="opacity-layer"></div>
