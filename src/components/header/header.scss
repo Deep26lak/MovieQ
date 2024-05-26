@@ -33,7 +33,12 @@
   .logo {
     cursor: pointer;
     img {
-      height: 50px;
+      height: 30px;
+      margin-top: 0.7rem;
+      @include md {
+        height: 40px;
+        margin-top: 3px;
+      }
     }
   }
   .menuItems {
