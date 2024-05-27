@@ -33,7 +33,7 @@ const Footer = () => {
             <BsGithub />
           </a>
           <a
-            href="https:/www.x.com/i_deep_26"
+            href="https://www.x.com/i_deep_26"
             target="_blank"
             rel="noreferrer"
             className="icon"
